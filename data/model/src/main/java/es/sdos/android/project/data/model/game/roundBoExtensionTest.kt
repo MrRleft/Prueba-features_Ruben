@@ -84,8 +84,7 @@ private fun getNextShotsScore(roundList: List<RoundBo>, startIndex: Int, numberO
             else -> 0
         }
 
-        val firstShot = startRound.firstShot
-        var confirmedAmount = 0
+        var confirmedAmount = startRound.firstShot
         var advancedShots = 1
         val secondShot = startRound.secondShot ?: 0
         val thirdShot = startRound.thirdShot ?: 0

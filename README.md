@@ -27,15 +27,15 @@ Pantalla para introducir y ver las tiradas de una partida. Cuando acabe la parti
 
 # Ejercicios
 
-1[DONE]. Parsear el servicio de sincronización usando Retrofit + Gson. URL: [https://raw.githubusercontent.com/SDOSLabs/AndroidTestJson/master/db.json](https://raw.githubusercontent.com/SDOSLabs/AndroidTestJson/master/db.json)
-2[DONE]. Modelar la base de datos usando Room.
-3[DONE]. Home: Petición de datos en el viewmodel. NOTA: Es posible que requiera una transformación o cambiar código.
-4[DONE]. Home: Mostrar dialogo si al pulsar en nueva partida existe ya una sin finalizar advirtiendo que se va a borrar
-5[DONE]. Home: Navigación
-6[DONE]. Partida: Ajustar los layouts con las constraints correspondientes según diseño ( [Imagen](game.png) )
-7. Partida: Funcionalidad completa para añadir una tirada.
-8[DONE]. Puntuaciones: El equipo de QA ha detectado algunos errores pero no nos han dicho nada más, revisar que todo vaya bien.
-9[DONE]. TEST: Verificar el correcto funcionamiento de RoundBoExtensions.addShot con los test necesarios.
+1.[DONE] Parsear el servicio de sincronización usando Retrofit + Gson. URL: [https://raw.githubusercontent.com/SDOSLabs/AndroidTestJson/master/db.json](https://raw.githubusercontent.com/SDOSLabs/AndroidTestJson/master/db.json)
+2.[DONE] Modelar la base de datos usando Room.
+3.[DONE] Home: Petición de datos en el viewmodel. NOTA: Es posible que requiera una transformación o cambiar código.
+4.[DONE] Home: Mostrar dialogo si al pulsar en nueva partida existe ya una sin finalizar advirtiendo que se va a borrar
+5.[DONE] Home: Navigación
+6.[DONE] Partida: Ajustar los layouts con las constraints correspondientes según diseño ( [Imagen](game.png) )
+7.[DONE] Partida: Funcionalidad completa para añadir una tirada.
+8.[DONE] Puntuaciones: El equipo de QA ha detectado algunos errores pero no nos han dicho nada más, revisar que todo vaya bien.
+9.[DONE] TEST: Verificar el correcto funcionamiento de RoundBoExtensions.addShot con los test necesarios.
 
 # Puntuación
 Como requisito para realizar la evaluación el proyecto deberá compilar. Cualquier error (Los TODO no cuentan) que provoque un cierre inesperado restará puntos.

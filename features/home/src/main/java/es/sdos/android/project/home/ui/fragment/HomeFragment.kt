@@ -41,8 +41,8 @@ class HomeFragment : BaseFragment() {
     private fun getPendingGame(result: AsyncResult<List<GameBo>>?) {
         when (result?.status) {
             AsyncResult.Status.SUCCESS -> {
-                result.data?.let{
-                    if(it.isNotEmpty()){
+                result.data?.let {
+                    if (it.isNotEmpty()) {
                         pendingGame = result.data?.last()
                         binding.homeContinueGame.visibility = VISIBLE
                     }
@@ -58,7 +58,9 @@ class HomeFragment : BaseFragment() {
 
     private fun bindClicks() {
         binding.homeNewGame.setOnClickListener {
-            ConfirmNewGameDialog(::onNewGameClick).show(this.childFragmentManager, "WNGD")
+            if (pendingGame != null)
+                ConfirmNewGameDialog(::onNewGameClick).show(this.childFragmentManager, "WNGD")
+            else onNewGameClick()
         }
         binding.homeContinueGame.setOnClickListener {
             onContinueGameClick()

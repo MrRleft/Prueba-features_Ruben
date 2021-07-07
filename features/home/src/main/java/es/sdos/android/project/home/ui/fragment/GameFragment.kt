@@ -35,8 +35,11 @@ class GameFragment : BaseFragment() {
         viewModel.requestGame(safeArgs.gameId)
         viewModel.getGameLiveData().observe(viewLifecycleOwner, Observer { result ->
             binding.game = result.data?.takeIf { result.status == AsyncResult.Status.SUCCESS }
+            binding.game?.let {if (it.finished) binding.gameBtnShotSubmit.visibility = View.GONE}
         })
-
+        binding.gameBtnShotSubmit.setOnClickListener {
+            viewModel.addShot(safeArgs.gameId, Integer.parseInt(binding.gameInputShotScore.text.toString()))
+        }
     }
 
     override fun getViewModel() = viewModel as BaseViewModel

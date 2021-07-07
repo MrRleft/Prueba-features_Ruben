@@ -22,7 +22,10 @@ abstract class GamesDao {
     @Insert (onConflict = OnConflictStrategy.IGNORE)
     abstract suspend fun saveGame(gameDbo: GameDbo) : Long
 
-    @Insert
+    @Insert (onConflict = OnConflictStrategy.REPLACE)
+    abstract suspend fun updateGame(gameDbo: GameDbo) : Long
+
+    @Insert (onConflict = OnConflictStrategy.REPLACE)
     abstract suspend fun saveRound(roundDbo: RoundDbo) : Long
 
     @Query("DELETE FROM gamedbo WHERE gamedbo.id like :gameId")

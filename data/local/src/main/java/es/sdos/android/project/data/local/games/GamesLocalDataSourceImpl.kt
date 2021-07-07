@@ -46,17 +46,16 @@ class GamesLocalDataSourceImpl(
 
     override suspend fun addShot(gameId: Long, shotScore: Int): GameBo? {
         val newRounds = gamesDao.getRounds(gameId).map { it.toBo() }.addShot(gameId, shotScore)
-        var score = 0
+        val score = newRounds.getLastScoreRegistered()
         newRounds.forEach {
-            it.score?.let { roundsScore -> score += roundsScore }
             gamesDao.saveRound(it.toDbo())
         }
 
         val game = gamesDao.getGame(gameId)
         if (game != null) {
-            game.finished = newRounds.size == 10 && newRounds[10].isComplete()
+            game.finished = newRounds.size >= 10 && newRounds.find{it.roundNum == 10}?.isComplete() == true
             game.score = score
-            gamesDao.saveGame(game)
+            gamesDao.updateGame(game)
         }
 
         return getGame(gameId)

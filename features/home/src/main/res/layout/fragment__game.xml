@@ -53,7 +53,6 @@
             app:layout_constraintStart_toEndOf="@id/game__input__shot_score"
             app:layout_constraintTop_toTopOf="@id/game__input__shot_score" />
 
-<!--           android:onClick="@{() -> viewmodel.addShot(game.id, Integer.parseInt(gameInputShotScore.text.toString()))}"-->
 
         <TextView
             android:id="@+id/game__label__total"

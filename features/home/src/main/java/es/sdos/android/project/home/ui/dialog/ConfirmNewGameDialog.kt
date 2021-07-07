@@ -23,7 +23,10 @@ class ConfirmNewGameDialog(private val confirmButtonAction: () -> Unit) :
     }
 
     private fun configureUI() {
-        binding.dialogAcceptButton.setOnClickListener { confirmButtonAction() }
+        binding.dialogAcceptButton.setOnClickListener {
+            confirmButtonAction()
+            this@ConfirmNewGameDialog.dismiss()
+        }
         binding.dialogCancelButton.setOnClickListener { this@ConfirmNewGameDialog.dismiss() }
     }
 }

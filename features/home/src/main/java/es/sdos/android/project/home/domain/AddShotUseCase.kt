@@ -10,6 +10,8 @@ import kotlin.coroutines.coroutineContext
 
 class AddShotUseCase @Inject constructor(private val repository: GamesRepository) {
 
+    //Todo quedarían operaciones de comprobacion de si es posible añadir valores y si los valores son válidos
+
     suspend operator fun invoke(gameId: Long, shotScore: Int): LiveData<AsyncResult<GameBo?>> {
         return repository.addShot(gameId, shotScore).flow().asLiveData(coroutineContext)
     }
