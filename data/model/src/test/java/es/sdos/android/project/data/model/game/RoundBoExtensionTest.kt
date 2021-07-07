@@ -88,7 +88,7 @@ class RoundBoExtensionTest {
         val res = prevRoundListSpare.addShot(gameId, 5)
 
         assert(res.last().firstShot == 5)
-        assert(res.getLastScoreRegistered() == 20)
+        assert(res.getLastScoreRegistered() == 15)
 
     }
 
@@ -99,7 +99,7 @@ class RoundBoExtensionTest {
 
         assert(res.last().firstShot == 5)
         assert(res.last().secondShot == 4)
-        assert(res.getLastScoreRegistered() == 29)
+        assert(res.getLastScoreRegistered() == 28)
     }
 
     @Test

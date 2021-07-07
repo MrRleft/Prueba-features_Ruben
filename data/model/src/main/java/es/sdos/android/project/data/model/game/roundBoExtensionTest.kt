@@ -1,5 +1,7 @@
 package es.sdos.android.project.data.model.game
 
+import kotlin.math.round
+
 fun List<RoundBo>.addShot(gameId: Long, shotScore: Int): List<RoundBo> {
     val result = this.toMutableList()
     if (result.isEmpty()) {
@@ -69,38 +71,52 @@ private fun updateScores(result: MutableList<RoundBo>) {
     }
 }
 
-/**
- * Obtiene la puntuación acumulada de los 'x' siguientes lanzamientos a partir de 'startIndex'
- */
 private fun getNextShotsScore(roundList: List<RoundBo>, startIndex: Int, numberOfShots: Int): Int {
-    return if (roundList.size < startIndex && numberOfShots <= 0)
+    return if (roundList.size > startIndex)
+        if (numberOfShots == 1)
+            roundList[startIndex].firstShot
+        else{
+            var second = roundList[startIndex].secondShot?: 0
+            if(roundList[startIndex].isStrike() && roundList.getOrNull(startIndex + 1) != null){
+                second = roundList[startIndex + 1].firstShot
+            }
+            roundList[startIndex].firstShot + second
+        }
+    else
         0
-    else {
-        val prevRound = if (startIndex == 1 || startIndex == 0) null else roundList[startIndex - 2]
-        val startRound = roundList[startIndex - 1]
-
-        var prevCounter = when {
-            prevRound?.isStrike() == true || prevRound?.isSpare() == true -> 10
-            else -> 0
-        }
-
-        var confirmedAmount = startRound.firstShot
-        var advancedShots = 1
-        val secondShot = startRound.secondShot ?: 0
-        val thirdShot = startRound.thirdShot ?: 0
-
-        if (numberOfShots % 2 == 0 && !startRound.isStrike()) {
-            confirmedAmount += secondShot
-            if (prevRound?.isStrike() == true) prevCounter += 10
-            advancedShots = 2
-        }
-        if (startRound.roundNum == 10 && numberOfShots >= 3) {
-            confirmedAmount += thirdShot
-            confirmedAmount += if (startRound.isSpare() || startRound.isStrike()) 10 else 0
-            advancedShots = 3
-        }
-        confirmedAmount += prevCounter
-        confirmedAmount + getNextShotsScore(roundList, startIndex + 1, numberOfShots - advancedShots)
-    }
-
 }
+
+///**
+// * Entendi, consigue la puntuacion desde startIndex hasta que se acaben los numberOfShots
+// */
+//private fun getNextShotsScore(roundList: List<RoundBo>, startIndex: Int, numberOfShots: Int): Int {
+//    return if (roundList.size < startIndex || numberOfShots <= 0)
+//        0
+//    else {
+//        val prevRound = if (startIndex == 1 || startIndex == 0) null else roundList[startIndex - 2]
+//        val startRound = roundList[startIndex - 1]
+//
+//        var confirmedAmount = startRound.firstShot
+//        var advancedShots = 1
+//        val secondShot = startRound.secondShot ?: 0
+//        val thirdShot = startRound.thirdShot ?: 0
+//
+//        if(prevRound?.isStrike() == true || prevRound?.isSpare() == true)
+//            confirmedAmount += startRound.firstShot
+//
+//        if (numberOfShots % 2 == 0 && !startRound.isStrike()) {
+//            confirmedAmount += secondShot
+//            if (prevRound?.isStrike() == true) confirmedAmount += secondShot
+//            advancedShots = 2
+//        }
+//
+//        if (startRound.roundNum == 10 && numberOfShots >= 3) {
+//            confirmedAmount += thirdShot
+//            confirmedAmount += if (startRound.isSpare() || startRound.isStrike()) thirdShot else 0
+//            advancedShots = 3
+//        }
+//
+//        confirmedAmount + getNextShotsScore(roundList, startIndex + 1, numberOfShots - advancedShots)
+//    }
+
+
