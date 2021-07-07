@@ -1,0 +1,10 @@
+import es.sdos.android.dependencies.Dependencies
+
+apply from: "$rootDir/configuration__kotlin_module.gradle"
+
+dependencies {
+    implementation Dependencies.AndroidTest.mockitoCore
+    implementation Dependencies.AndroidTest.mockitoJunit
+    implementation Dependencies.AndroidTest.jupiter
+    implementation Dependencies.AndroidTest.junit
+}

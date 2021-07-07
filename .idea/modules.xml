@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Prueba-Tecnica-v1.0.iml" filepath="$PROJECT_DIR$/.idea/Prueba-Tecnica-v1.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Prueba-Tecnica-v1.0.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Prueba-Tecnica-v1.0.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Prueba-Tecnica-v1.0.buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/Prueba-Tecnica-v1.0.buildSrc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/Prueba-Tecnica-v1.0.common.iml" filepath="$PROJECT_DIR$/.idea/modules/common/Prueba-Tecnica-v1.0.common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/Prueba-Tecnica-v1.0.data.iml" filepath="$PROJECT_DIR$/.idea/modules/data/Prueba-Tecnica-v1.0.data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/datasource/Prueba-Tecnica-v1.0.data.datasource.iml" filepath="$PROJECT_DIR$/.idea/modules/data/datasource/Prueba-Tecnica-v1.0.data.datasource.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/local/Prueba-Tecnica-v1.0.data.local.iml" filepath="$PROJECT_DIR$/.idea/modules/data/local/Prueba-Tecnica-v1.0.data.local.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/model/Prueba-Tecnica-v1.0.data.model.iml" filepath="$PROJECT_DIR$/.idea/modules/data/model/Prueba-Tecnica-v1.0.data.model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/remote/Prueba-Tecnica-v1.0.data.remote.iml" filepath="$PROJECT_DIR$/.idea/modules/data/remote/Prueba-Tecnica-v1.0.data.remote.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/repository/Prueba-Tecnica-v1.0.data.repository.iml" filepath="$PROJECT_DIR$/.idea/modules/data/repository/Prueba-Tecnica-v1.0.data.repository.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/features/Prueba-Tecnica-v1.0.features.iml" filepath="$PROJECT_DIR$/.idea/modules/features/Prueba-Tecnica-v1.0.features.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/features/home/Prueba-Tecnica-v1.0.features.home.iml" filepath="$PROJECT_DIR$/.idea/modules/features/home/Prueba-Tecnica-v1.0.features.home.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/features/launcher/Prueba-Tecnica-v1.0.features.launcher.iml" filepath="$PROJECT_DIR$/.idea/modules/features/launcher/Prueba-Tecnica-v1.0.features.launcher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/navigation/Prueba-Tecnica-v1.0.navigation.iml" filepath="$PROJECT_DIR$/.idea/modules/navigation/Prueba-Tecnica-v1.0.navigation.iml" />
+    </modules>
+  </component>
+</project>

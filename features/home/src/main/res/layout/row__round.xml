@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="item"
+            type="es.sdos.android.project.data.model.game.RoundBo" />
+
+        <import
+            alias="util"
+            type="es.sdos.android.project.home.ui.binding.GameBinding" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/round_box"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg__square_border"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context=".ui.fragment.GameFragment">
+
+        <TextView
+            android:id="@+id/game_round_row__label__round_num"
+            style="@style/Text.Small"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/score_box"
+            android:background="@drawable/bg__square_border"
+            android:gravity="center"
+            android:text="@{util.intOrEmpty(item.roundNum)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/game_round_row__label__first_shot"
+            style="@style/Text.Small"
+            android:layout_width="@dimen/score_box"
+            android:layout_height="@dimen/score_box"
+            android:background="@drawable/bg__square_border"
+            android:gravity="center"
+            android:text="@{util.shotScore(item, 1)}"
+            app:layout_constraintEnd_toStartOf="@+id/game_round_row__label__second_shot"
+            app:layout_constraintTop_toBottomOf="@id/game_round_row__label__round_num" />
+
+        <TextView
+            android:id="@+id/game_round_row__label__second_shot"
+            style="@style/Text.Small"
+            android:layout_width="@dimen/score_box"
+            android:layout_height="@dimen/score_box"
+            android:background="@drawable/bg__square_border"
+            android:gravity="center"
+            android:text="@{util.shotScore(item, 2)}"
+            app:layout_constraintEnd_toStartOf="@+id/game_round_row__label__third_shot"
+            app:layout_constraintTop_toBottomOf="@id/game_round_row__label__round_num" />
+
+        <TextView
+            android:id="@+id/game_round_row__label__third_shot"
+            style="@style/Text.Small"
+            android:layout_width="@dimen/score_box"
+            android:layout_height="@dimen/score_box"
+            android:background="@drawable/bg__square_border"
+            android:gravity="center"
+            android:text="@{util.shotScore(item, 3)}"
+            android:visibility="@{item.thirdShot == null ? View.GONE : View.VISIBLE, default=gone}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/game_round_row__label__round_num" />
+
+        <TextView
+            android:id="@+id/game_round_row__label__score"
+            style="@style/Text.Small"
+            android:layout_width="@dimen/score_box"
+            android:layout_height="@dimen/score_box"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="@{util.intOrEmpty(item.score)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/game_round_row__label__second_shot" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
