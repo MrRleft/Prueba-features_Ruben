@@ -22,14 +22,3 @@ Listado con todo el historíal de puntuaciones de todas las partidas completadas
 
 ### Partida
 Pantalla para introducir y ver las tiradas de una partida. Cuando acabe la partida se ocultará el input y el botón.
-
-# Puntuación
-Como requisito para realizar la evaluación el proyecto deberá compilar. Cualquier error (Los TODO no cuentan) que provoque un cierre inesperado restará puntos.
-
-| Sección  | Puntos |
-|----------|--------|
-| Datos remotos WS | 1.5 |
-| Datos locales BD | 2 |
-| Repositorio | 1 |
-| Home Feature | 4 |
-| Tests | 1.5 |
